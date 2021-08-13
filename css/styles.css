@@ -414,7 +414,8 @@ h2 {
   margin-left: auto;
   margin-right: auto;
   margin-top: 30px;
-  background-color: #fff; }
+  background-color: #fff;
+  border-radius: 10px; }
 
 .modal-content {
   display: flex;
@@ -435,7 +436,8 @@ h2 {
 
 .modal-info {
   margin: 20px;
-  font-size: 1em; }
+  font-size: 1em;
+  color: gray; }
 
 .modal-name {
   margin-bottom: 5px;

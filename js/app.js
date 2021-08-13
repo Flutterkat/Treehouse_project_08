@@ -140,24 +140,24 @@ closeButton.addEventListener('click', () => {
 leftArrow.addEventListener('click', () => {
     let data = employeeProfile;
     for(i=0;i<profileDiv.length;i++) {
-    if (classVar.includes(`event${i}`)) {
-    employeePic = [data[i-1].picture.medium, data[i-1].picture.large];
-    employeeName = `${data[i-1].name.first} ${data[i-1].name.last}`;
-    employeeEmail = `${data[i-1].name.first}@example.com`;
-    employeeCell = data[i-1].cell;
-    employeeAddress = [data[i-1].location.street, data[i-1].location.city, data[i-1].location.state, data[i-1].location.postcode];
-    employeeDob = [data[i-1].dob];
+        if (classVar.includes(`event${i}`)) {
+            employeePic = [data[i-1].picture.medium, data[i-1].picture.large];
+            employeeName = `${data[i-1].name.first} ${data[i-1].name.last}`;
+            employeeEmail = `${data[i-1].name.first}@example.com`;
+            employeeCell = data[i-1].cell;
+            employeeAddress = [data[i-1].location.street, data[i-1].location.city, data[i-1].location.state, data[i-1].location.postcode];
+            employeeDob = [data[i-1].dob];
 //assigns new className to pass to classVar for next click handler event
-    classPass = `event${i-1}`;
+            classPass = `event${i-1}`;
     }
 }
-//work around for event handler where classVar.includes(`event${i}`) was passing the for loop's if statement on first pass when classVar was set to event10 or event11.
+//work around for event handler where classVar.includes(`event${i}`) was passing the for loop's 'if' statement on first pass when classVar was set to event10 or event11.
     if (classVar.includes(`event10`)) {
     classPass = `event9`;
 } else if (classVar.includes(`event11`)) {
     classPass = `event10`
 }
-//passes new employeeProfile to modalGen() for extracting and formatting profile data.
+//calls modalGen() with updated variables.
     modalGen();
     classVar = classPass;
 
@@ -183,6 +183,7 @@ rightArrow.addEventListener('click', () => {
             employeeDob = [data[i+1].dob];
 //assigns new className to pass to classVar for next click handler event
             classPass = `event${i+1}`;
+//calls modalGen() with updated variables.
             modalGen();
         }
     }
