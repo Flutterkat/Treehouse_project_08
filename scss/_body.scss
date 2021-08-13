@@ -1,0 +1,171 @@
+body {
+    position: relative;
+    max-width: 1024px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+h2 {
+    width: 95%;
+    margin-left: 30px;
+    line-height: 1em;
+    text-align: left;
+}
+
+.search {
+    height: 50%;
+    width: 80%;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: 45px;
+}
+
+.grid {
+    height: 90vh;
+    width: calc(1024px - 75px);
+    margin-left: 30px;
+    margin-right: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.profile {
+    display: flex;
+    height: 90%;
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 10px;
+    align-items: center;
+    &:hover {
+    cursor: pointer;
+    }
+}
+
+.userImage {
+    float: left;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 30%;
+    height: 50%;
+    border-radius: 50%;
+}
+
+.name {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+.info {
+    display: block;
+    padding-right: 10px;
+    width: calc(304.328px - 30%);
+}
+
+.info p {
+    color: gray;
+    font-size: .8em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+// Modal overlay<=====================================
+
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4);
+}
+
+.modal-close {
+    position: absolute;
+    left: 80%;
+    top: 10px;
+    background: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+        }
+}
+
+.modal-left, .modal-right {
+    position: absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.modal-left {
+    left: 5px;
+}
+
+.modal-right {
+    right: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    background-color: #fff;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 575px;
+    width: 375px;
+    margin: auto;
+}
+
+.modal-userImage {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.modal-info-wrapper p, .modal-info-wrapper h3{
+    text-align: center;
+}
+
+.modal-info {
+    margin: 20px;
+    font-size: 1em;
+}
+
+.modal-name {
+    margin-bottom: 5px;
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+.divide {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-bottom: 1px solid gray;
+}
