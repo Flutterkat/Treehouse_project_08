@@ -167,6 +167,9 @@ h2 {
 
 .modal-info-wrapper p, .modal-info-wrapper h3{
     text-align: center;
+    &:hover {
+        cursor: default;
+    }
 }
 
 .modal-info {

@@ -450,6 +450,8 @@ h2 {
 
 .modal-info-wrapper p, .modal-info-wrapper h3 {
   text-align: center; }
+  .modal-info-wrapper p:hover, .modal-info-wrapper h3:hover {
+    cursor: default; }
 
 .modal-info {
   margin: 20px;
