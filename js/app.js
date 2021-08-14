@@ -41,12 +41,12 @@ const employeeFormating = (data) => {
 };
 
 //=======================================================================<<
-//generates innerHTML for profiles in grid.
+//generates innerHTML for all 12 profiles in grid.
 const divGen = (data) => {
 //stores fetched data in var for additional manipulation and calls later.
     employeeProfile = data;
+//extracts needed data from employeeprofile array and iterates over all array items converting to variables for use in template Literal innerHTML.
     for (i=0;i<data.length;i++) {
-//extracts needed data into variables for use in template Literal innerHTML.
     employeeFormating(data[i]);
     employeeMain[0].innerHTML += `
     <div class='profile event${i}'>
