@@ -7,6 +7,7 @@ const leftArrow = document.getElementsByClassName('modal-left')[0];
 const rightArrow = document.getElementsByClassName('modal-right')[0];
 const profileDiv = document.getElementsByClassName('profile');
 const search = document.getElementsByClassName('search')[0];
+const employeesUrl = 'https://randomuser.me/api/?results=12';
 // example of array data stored in employeeProfile @ line 230.
 let employeeProfile = {};
 let employeePic = '';
@@ -17,7 +18,6 @@ let employeeAddress = '';
 let employeeDob = '';
 let classVar = '';
 let classPass = '';
-const employeesUrl = 'https://randomuser.me/api/?results=12';
 
 
 //=======================================================================<<
@@ -228,7 +228,7 @@ profileGen(employeesUrl);
 
 
 /* 
-example of employeeData[x] array; where x = # between 0 and 11;
+example of employeeProfile[x] array; where x = # between 0 and 11;
 VVVVVVVVVVVVVVVVVVVVVVVVVVVVVV
 
 {
