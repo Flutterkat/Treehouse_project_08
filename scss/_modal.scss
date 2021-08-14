@@ -1,0 +1,98 @@
+.overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(100, 100, 100, 0.4);
+}
+
+.modal-close {
+    position: absolute;
+    left: 80%;
+    top: 10px;
+    background: none;
+    border: none;
+    &:hover {
+        cursor: pointer;
+        }
+}
+
+.modal-left, .modal-right {
+    position: absolute;
+    top: 50%;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.modal-left {
+    left: 5px;
+}
+
+.modal-right {
+    right: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal {
+    position: relative;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 70px;
+    background-color: #fff;
+    border: 1px solid rgb(160, 159, 159);
+    box-shadow: 0px 0px 3px 2px rgb(160, 159, 159) inset;
+    border-radius: 10px;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    height: 575px;
+    width: 375px;
+    margin: auto;
+}
+
+.modal-userImage {
+    width: 50%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.modal-info-wrapper p, .modal-info-wrapper h3{
+    text-align: center;
+    &:hover {
+        cursor: default;
+    }
+}
+
+.modal-info {
+    margin: 20px;
+    font-size: .9em;
+    color: gray;
+}
+
+.modal-name {
+    margin-bottom: 5px;
+    margin-top: 30px;
+    font-size: 1.5em;
+}
+
+.divide {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    border-bottom: 1px solid rgb(160, 159, 159);
+}

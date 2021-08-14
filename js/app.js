@@ -8,7 +8,6 @@ const rightArrow = document.getElementsByClassName('modal-right')[0];
 const profileDiv = document.getElementsByClassName('profile');
 const search = document.getElementsByClassName('search')[0];
 let employeeProfile = {};
-let reducedProfile = '';
 let employeePic = '';
 let employeeName = '';
 let employeeEmail = '';
@@ -26,9 +25,17 @@ async function profileGen(url) {
         .then(employeeData => employeeData.json())
         .then(employeeData => employeeData = employeeData.results)
         .then(divGen);
+}
+
+//formats employeeProfile array into variables
+const employeeFormating = (data) => {
+    employeePic = [data[i].picture.medium, data[i].picture.large];
+    employeeName = `${data[i].name.first} ${data[i].name.last}`;
+    employeeEmail = `${data[i].name.first}@example.com`;
+    employeeCell = data[i].cell;
+    employeeAddress = [data[i].location.street, data[i].location.city, data[i].location.state, data[i].location.postcode];
+    employeeDob = [data[i].dob];
 };
-
-
 
 //generates innerHTML for profiles in grid.
 const divGen = (data) => {
@@ -36,12 +43,7 @@ const divGen = (data) => {
     employeeProfile = data;
     for (i=0;i<data.length;i++) {
 //extracts needed data into variables for use in template Literal innerHTML.
-    employeePic = [data[i].picture.medium, data[i].picture.large];
-    employeeName = `${data[i].name.first} ${data[i].name.last}`;
-    employeeEmail = `${data[i].name.first}@example.com`;
-    employeeCell = data[i].cell;
-    employeeAddress = [data[i].location.street, data[i].location.city, data[i].location.state, data[i].location.postcode];
-    employeeDob = [data[i].dob];
+    employeeFormating(data);
     employeeMain[0].innerHTML += `
     <div class='profile event${i}'>
         <img src='${employeePic[0]}' alt='user image' class="userImage event${i}">
@@ -55,7 +57,7 @@ const divGen = (data) => {
     }
 //generates the first modal screen, display is set to none on first pass. this stops errors from being thrown in other functions before modal view is created
     modalGen();
-}
+};
 
 //reformats phone numbers for modal view.
 const phoneFormat = (phone) => {
@@ -65,21 +67,21 @@ const phoneFormat = (phone) => {
 //checks and modifys phone number strings and returns a 10 digit number
     if (phone.length<10) {
         for(i=phone.length; i<10; i++) {
-        phone = `${phone}0`
-        };
+        phone = `${phone}0`;
+        }
     } else {
         phone = phone.substring(0,10);
     }
 //formats a string of 10 numbers into phone format. example: (555) 555-555
-    employeeCell = `(${phone.substring(0,3)}) ${phone.substring(3,6)}-${phone.substring(6,11)}`
-}
+    employeeCell = `(${phone.substring(0,3)}) ${phone.substring(3,6)}-${phone.substring(6,11)}`;
+};
 
 //takes and reformats birthday display for modal view.
 const birthdayFormat = (dob) => {
     dob = dob[0].date.slice(0, 10);
     dob = dob.replace(/-/g, "");
     dobFormat = `${dob.substring(4,6)}/${dob.substring(6,8)}/${dob.substring(0,4)}`;
-}
+};
 
 //generates innerHTML for modal viewer based on information passed from grid eventhandler
 const modalGen = () => {
@@ -98,7 +100,7 @@ const modalGen = () => {
         <p class='modal-info'>Birthday: ${dobFormat}</p>
         </div>
     `;
-}
+};
 
 //handles the generation of modal view based on clicked profile.
 grid.addEventListener('click', (e) => {
@@ -107,12 +109,7 @@ grid.addEventListener('click', (e) => {
     classVar = e.target.className;
     for(i=0;i<profileDiv.length;i++) {
         if (e.target.classList.contains(`event${i}`)) {
-        employeePic = [data[i].picture.medium, data[i].picture.large];
-        employeeName = `${data[i].name.first} ${data[i].name.last}`;
-        employeeEmail = `${data[i].name.first}@example.com`;
-        employeeCell = data[i].cell;
-        employeeAddress = [data[i].location.street, data[i].location.city, data[i].location.state, data[i].location.postcode];
-        employeeDob = [data[i].dob];
+        employeeFormating(data);
         hidden.style.display = 'block';
         modalGen(employeeProfile[i]);
         }
@@ -155,7 +152,7 @@ leftArrow.addEventListener('click', () => {
     if (classVar.includes(`event10`)) {
     classPass = `event9`;
 } else if (classVar.includes(`event11`)) {
-    classPass = `event10`
+    classPass = `event10`;
 }
 //calls modalGen() with updated variables.
     modalGen();
