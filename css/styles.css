@@ -313,7 +313,9 @@ body {
   grid-template-rows: 1fr auto;
   grid-template-areas: "top top" "grid grid";
   max-width: 1024px;
-  height: 100vh; }
+  height: 100vh;
+  margin-left: auto;
+  margin-right: auto; }
 
 header {
   display: grid;
