@@ -186,6 +186,9 @@ rightArrow.addEventListener('click', () => {
 //calls modalGen() with updated variables.
             modalGen();
         }
+        if (classVar.includes(`event10`)) {
+            classPass = `event11`;
+        }
     }
     classVar = classPass;
 //handles display of arrows hides and shows them based on position in modal view.

@@ -82,7 +82,6 @@ h2 {
 .info {
     display: block;
     width: calc(304px - 30%);
-    overflow-wrap: break-word;
 }
 
 .info p {
@@ -172,7 +171,7 @@ h2 {
 
 .modal-info {
     margin: 20px;
-    font-size: 1em;
+    font-size: .9em;
     color: gray;
 }
 
