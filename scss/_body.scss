@@ -58,6 +58,7 @@ h2 {
     border-radius: 10px;
     align-items: center;
     align-self: center;
+    transition: transform .3s;
     &:hover {
     cursor: pointer;
     transform: scale(1.1);
